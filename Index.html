@@ -4,75 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minhas Notas</title>
-    <!-- Aqui chamamos o nosso arquivo css externo -->
-   <!-- <link rel="stylesheet" type="text/css" href="css\teste.css" /> -->
-    <!--[if lte IE 8]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <style>
-        /* Estilos para tornar o menu responsivo */
+        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
         }
 
+        /* Estilos para a barra de navegação */
         nav {
             background-color: #333;
             color: #fff;
+            padding: 10px 0;
         }
 
         .menu {
             list-style-type: none;
+            margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .menu li {
-            margin: 0 10px;
+            margin: 0 20px;
         }
 
         .menu a {
             text-decoration: none;
             color: #fff;
+            font-weight: bold;
         }
 
         /* Estilos para tornar o menu responsivo em telas pequenas */
         @media screen and (max-width: 768px) {
             .menu {
                 flex-direction: column;
+                text-align: center;
                 display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #333;
             }
 
             .menu.active {
                 display: flex;
             }
 
-            .menu li {
-                margin: 10px 0;
-                text-align: center;
-            }
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                color: #fff;
-                font-size: 24px;
+                text-align: right;
+                margin: 10px;
+                cursor: pointer;
             }
         }
     </style>
@@ -80,8 +63,9 @@
 <body>
 
 <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <ul class="menu">
-        <li><a href="pages/vt.html"><b>Vale transporte</b></a></li>
+        <li><a href="pages/vt.html">Vale transporte</a></li>
         <li><a href="pages/pa.html">Passe antecipado</a></li>
         <li><a href="pages/contas.html">Resumo de contas</a></li>
         <li><a href="pages/confpgto.html">Confirmação de pagamento</a></li>
@@ -90,7 +74,6 @@
         <li><a href="pages/forms.html" target="_blank">Forms</a></li>
         <li><a href="pages/webradios.html" target="_blank">Radio</a></li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
 </nav>
 
 <script>
