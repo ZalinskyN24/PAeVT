@@ -43,14 +43,15 @@
 
         /* Estilos para o iframe */
         iframe {
-            width: 150%;
-            max-width: 300%;
-            height: 400%; /* Torna a altura automática para ser responsiva */
+            width: 100%;
+            max-width: 100%;
+            height: auto; /* Torna a altura automática para ser responsiva */
+            min-height: 520px; /* Altura mínima desejada para o iframe */
             border: none;
         }
 
         /* Media query para tela menor que 600px */
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 280px) {
             .button {
                 padding: 8px 16px;
                 margin: 8px;
