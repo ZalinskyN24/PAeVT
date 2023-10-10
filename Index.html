@@ -56,6 +56,9 @@
                 width: 100%;
                 text-align: center;
                 background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
             }
 
             .menu.active {
@@ -65,22 +68,20 @@
             .menu li {
                 margin: 10px 0;
             }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         .menu-toggle {
             display: none;
             cursor: pointer;
-        }
-
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                text-align: right;
-                margin: 10px;
-                cursor: pointer;
-                color: #fff;
-                font-size: 24px;
-            }
+            text-align: right;
+            margin: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
         }
     </style>
 </head>
