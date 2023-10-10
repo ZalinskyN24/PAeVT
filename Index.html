@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minhas Notas</title>
     <!-- Aqui chamamos o nosso arquivo css externo -->
-    <!--<link rel="stylesheet" type="text/css" href="css\teste.css" />-->
+    <link rel="stylesheet" type="text/css" href="css\teste.css" />
     <!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -20,15 +20,19 @@
         nav {
             background-color: #333;
             color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .menu {
             list-style-type: none;
             padding: 0;
+            display: flex;
         }
 
         .menu li {
-            margin: 10px;
+            margin: 0 10px;
         }
 
         .menu a {
@@ -42,7 +46,7 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 50px;
+                top: 60px;
                 left: 0;
                 width: 100%;
                 background-color: #333;
@@ -56,21 +60,15 @@
                 margin: 10px 0;
                 text-align: center;
             }
-        }
 
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
                 position: absolute;
                 top: 10px;
-                left: 10px;
+                right: 10px;
                 color: #fff;
                 font-size: 24px;
+                cursor: pointer;
             }
         }
     </style>
@@ -78,7 +76,6 @@
 <body>
 
 <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <ul class="menu">
         <li><a href="pages/vt.html"><b>Vale transporte</b></a></li>
         <li><a href="pages/pa.html">Passe antecipado</a></li>
@@ -89,6 +86,7 @@
         <li><a href="pages/forms.html" target="_blank">Forms</a></li>
         <li><a href="pages/webradios.html" target="_blank">Radio</a></li>
     </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
 </nav>
 
 <script>
