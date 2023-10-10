@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minhas Notas</title>
     <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css" href="css\teste.css" />
+   <!-- <link rel="stylesheet" type="text/css" href="css\teste.css" /> -->
     <!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -20,15 +20,13 @@
         nav {
             background-color: #333;
             color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .menu {
             list-style-type: none;
             padding: 0;
             display: flex;
+            justify-content: space-between;
         }
 
         .menu li {
@@ -41,10 +39,10 @@
         }
 
         /* Estilos para tornar o menu responsivo em telas pequenas */
-        @media screen and (max-width: 160px) {
+        @media screen and (max-width: 768px) {
             .menu {
-                display: none;
                 flex-direction: column;
+                display: none;
                 position: absolute;
                 top: 60px;
                 left: 0;
@@ -60,7 +58,14 @@
                 margin: 10px 0;
                 text-align: center;
             }
+        }
 
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
                 position: absolute;
@@ -68,7 +73,6 @@
                 right: 10px;
                 color: #fff;
                 font-size: 24px;
-                cursor: pointer;
             }
         }
     </style>
