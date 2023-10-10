@@ -25,9 +25,6 @@
         .menu {
             list-style-type: none;
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
         .menu li {
@@ -38,11 +35,50 @@
             text-decoration: none;
             color: #fff;
         }
+
+        /* Estilos para tornar o menu responsivo em telas pequenas */
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: #fff;
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <ul class="menu">
         <li><a href="pages/vt.html"><b>Vale transporte</b></a></li>
         <li><a href="pages/pa.html">Passe antecipado</a></li>
@@ -54,6 +90,13 @@
         <li><a href="pages/webradios.html" target="_blank">Radio</a></li>
     </ul>
 </nav>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector(".menu");
+        menu.classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
