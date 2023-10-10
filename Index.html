@@ -1,6 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<head><!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minhas Notas</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Estilos para a barra de navegação */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Estilos para tornar o menu responsivo em telas pequenas */
+        @media screen and (max-width: 768px) {
+            .menu-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #333;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                text-align: right;
+                margin: 10px;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="menu-container">
+        <ul class="menu">
+            <li><a href="pages/vt.html">Vale transporte</a></li>
+            <li><a href="pages/pa.html">Passe antecipado</a></li>
+            <li><a href="pages/contas.html">Resumo de contas</a></li>
+            <li><a href="pages/confpgto.html">Confirmação de pagamento</a></li>
+            <li><a href="pages/forms.html" target="_blank">Forms</a></li>
+            <li><a href="pages/ceee.html" target="_blank">Ceee Leitura JK's e Quartos</a></li>
+            <li><a href="pages/forms.html" target="_blank">Forms</a></li>
+            <li><a href="pages/webradios.html" target="_blank">Radio</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector(".menu");
+        menu.classList.toggle("active");
+    }
+</script>
+
+</body>
+</html>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minhas Notas</title>
